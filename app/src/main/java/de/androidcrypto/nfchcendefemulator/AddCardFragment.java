@@ -32,6 +32,11 @@ import java.util.TimerTask;
  */
 public class SendFragment extends Fragment {
 
+
+    com.google.android.material.textfield.TextInputLayout panLayout, expiryLayout;
+    com.google.android.material.textfield.TextInputEditText panEditText, expiryEditText;
+    Button sendButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -101,6 +106,34 @@ public class SendFragment extends Fragment {
         dataToSendLayout = getView().findViewById(R.id.etDataToSendsLayout);
         dataToSendLayout.setEnabled(false);
         dataToSend = getView().findViewById(R.id.etDataToSend);
+
+        panLayout = getView().findViewById(R.id.til_pan);
+        panEditText = getView().findViewById(R.id.et_pan);
+        expiryLayout = getView().findViewById(R.id.til_expiry);
+        expiryEditText = getView().findViewById(R.id.et_expiry);
+        sendButton = getView().findViewById(R.id.btn_send);
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String pan = panEditText.getText().toString();
+                String expiry = expiryEditText.getText().toString();
+                if (TextUtils.isEmpty(pan) || TextUtils.isEmpty(expiry)) {
+                    Toast.makeText(view.getContext(), "Enter PAN and expiry date", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (pan.length() != 16 || expiry.length() != 4) {
+                    Toast.makeText(view.getContext(), "Invalid PAN or expiry date", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // Send the information through MIFARE here
+                Intent intent = new Intent(view.getContext(), MyHostApduService.class);
+                intent.putExtra("pan", pan);
+                intent.putExtra("expiry", expiry);
+                Toast.makeText(view.getContext(), "Sending PAN: " + pan + ", expiry: " + expiry, Toast.LENGTH_SHORT).show();
+                requireActivity().startService(intent);
+            }
+        });
         dataToSendLayout.setEndIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

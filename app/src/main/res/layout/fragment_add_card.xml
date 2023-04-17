@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SendFragment">
+    tools:context=".AddCardFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -107,6 +107,57 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rbGroup"
+            android:layout_marginTop="16dp"
+            android:hint="Enter PAN Number"
+            app:layout_constraintTop_toBottomOf="@id/rbGroup">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_expiry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/til_pan"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_pan"
+            android:hint="Expiry Date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_expiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </RelativeLayout>
 

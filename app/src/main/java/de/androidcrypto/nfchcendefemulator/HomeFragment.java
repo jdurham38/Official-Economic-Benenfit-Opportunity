@@ -3,10 +3,12 @@ package de.androidcrypto.nfchcendefemulator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +61,47 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button payNowButton = rootView.findViewById(R.id.payNowButton);
+        payNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with PayNowFragment
+                Fragment payNowFragment = new PayNow();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, payNowFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        Button transactionHistoryButton = rootView.findViewById(R.id.transactionHistoryButton);
+        transactionHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with TransactionHistoryFragment
+                Fragment transactionHistoryFragment = new TransactionDetailsFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, transactionHistoryFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        Button addCardButton = rootView.findViewById(R.id.addCardButton);
+        addCardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with AddCardFragment
+                Fragment addCardFragment = new AddCardFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, addCardFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        return rootView;
     }
 }

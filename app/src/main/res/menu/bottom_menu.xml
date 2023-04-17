@@ -5,19 +5,27 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_outline_home_24"
         android:title="Home" />
-
     <item
-        android:id="@+id/send"
-        android:icon="@drawable/ic_outline_send_to_mobile_24"
-        android:title="Send" />
-
-    <item
-        android:id="@+id/receive"
-        android:icon="@drawable/ic_outline_add_to_home_screen_24"
-        android:title="Read" />
-
-    <item
-        android:id="@+id/receive_extended"
+        android:id="@+id/pay_now"
         android:icon="@drawable/outline_data_exploration_24"
-        android:title="Read Ext" />
+        android:title="Pay Now" />
+    <item
+        android:id="@+id/transaction_history"
+        android:icon="@drawable/outline_data_exploration_24"
+        android:title="Transaction History" />
+
+    <item
+        android:id="@+id/add_card"
+        android:icon="@drawable/ic_outline_send_to_mobile_24"
+        android:title="Add Benefits Card" />
+
+
+    <item
+        android:id="@+id/help"
+        android:icon="@drawable/outline_data_exploration_24"
+        android:title="Help" />
+
+
+
+
 </menu>

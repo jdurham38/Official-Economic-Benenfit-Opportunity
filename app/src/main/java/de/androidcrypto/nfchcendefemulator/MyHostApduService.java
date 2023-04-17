@@ -149,7 +149,7 @@ public class MyHostApduService extends HostApduService {
      */
     @Override
     public byte[] processCommandApdu(byte[] commandApdu, Bundle extras) {
-        Log.d((TAG), "commandApdu: " + Utils.bytesToHex(commandApdu)); 
+        Log.d((TAG), "commandApdu: " + Utils.bytesToHex(commandApdu));
         //if (Arrays.equals(SELECT_APP, commandApdu)) {
         // check if commandApdu qualifies for SELECT_APPLICATION
         if (Arrays.equals(SELECT_APPLICATION, commandApdu)) {
@@ -175,7 +175,6 @@ public class MyHostApduService extends HostApduService {
         } else if (commandApdu[0] == (byte)0x00 && commandApdu[1] == (byte)0xb0) {
             // READ_BINARY
             // get the offset an le (length) data
-            //System.out.println("** " + Utils.bytesToHex(commandApdu) + " in else if (commandApdu[0] == (byte)0x00 && commandApdu[1] == (byte)0xb0) {");
             int offset = (0x00ff & commandApdu[2]) * 256 + (0x00ff & commandApdu[3]);
             int le = 0x00ff & commandApdu[4];
 
@@ -187,6 +186,7 @@ public class MyHostApduService extends HostApduService {
                 Log.d((TAG), "responseApdu: " + Utils.bytesToHex(responseApdu));
                 return responseApdu;
             } else if (mNdefSelected) {
+                // NDEF file
                 if (offset + le <= mNdefRecordFile.length) {
                     System.arraycopy(mNdefRecordFile, offset, responseApdu, 0, le);
                     System.arraycopy(SUCCESS_SW, 0, responseApdu, le, SUCCESS_SW.length);
@@ -194,6 +194,10 @@ public class MyHostApduService extends HostApduService {
                     return responseApdu;
                 }
             }
+        } else {
+            // unrecognized command
+            Log.d((TAG), "responseApdu: " + Utils.bytesToHex(FAILURE_SW));
+            return FAILURE_SW;
         }
 
         // The tag should return different errors for different reasons
@@ -201,7 +205,7 @@ public class MyHostApduService extends HostApduService {
         Log.d((TAG), "responseApdu: " + Utils.bytesToHex(FAILURE_SW));
         return FAILURE_SW;
     }
-    
+
 /*
 complete sequence:
 commandApdu: 00a4040007d276000085010100

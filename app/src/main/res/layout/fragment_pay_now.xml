@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tvWriteContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Enter data to write on the tag:"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etWriteContent"
+        android:layout_below="@id/tvWriteContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="Type here"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/payNowButton"
+        android:layout_below="@id/etWriteContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Pay Now" />
+
+    <TextView
+        android:id="@+id/tvReadContent"
+        android:layout_below="@id/payNowButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Read Content:"
+        android:textSize="16sp" />
+
+</RelativeLayout>

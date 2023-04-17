@@ -1,12 +1,9 @@
 package de.androidcrypto.nfchcendefemulator;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -37,13 +34,22 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         if (itemId == R.id.home) {
             selectedFragment = new HomeFragment();
-        } else if (itemId == R.id.send) {
-            selectedFragment = new SendFragment();
-        } else if (itemId == R.id.receive) {
-            selectedFragment = new ReceiveFragment();
-        } else if (itemId == R.id.receive_extended) {
-            selectedFragment = new ReceiveExtendedFragment();
+        } else if(itemId == R.id.pay_now){
+            selectedFragment = new PayNow();
         }
+        else if (itemId == R.id.transaction_history) {
+            selectedFragment = new TransactionDetailsFragment();
+        }
+        else if (itemId == R.id.add_card) {
+            selectedFragment = new AddCardFragment();
+        } //else if (itemId == R.id.receive) {
+           // selectedFragment = new ReceiveFragment();}
+        else if (itemId == R.id.help) {
+            selectedFragment = new FAQFragment();
+        }
+
+
+
         // It will help to replace the
         // one fragment to other.
         if (selectedFragment != null) {

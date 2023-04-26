@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/vectoraddacard">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="75dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Transaction History"
+            android:textSize="38dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_pan_label"
+        android:background="@drawable/box1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:text="PAN"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_pan"
+        android:background="@drawable/box2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+
+
+    <TextView
+        android:id="@+id/tv_amount_label"
+        android:background="@drawable/box1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Amount"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:background="@drawable/box2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_transaction_type_label"
+        android:background="@drawable/box1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Transaction Type"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_transaction_type"
+        android:background="@drawable/box2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logogreen"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="115dp" />
+
+    <FrameLayout
+        android:id="@+id/transaction_details_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

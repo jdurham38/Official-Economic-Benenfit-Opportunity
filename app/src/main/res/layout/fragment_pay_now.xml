@@ -1,49 +1,93 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/vectoraddacard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="75dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Pay Now"
+            android:textSize="38dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/tvWriteContent"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="180dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Enter data to write on the tag:"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etWriteContent"
         android:layout_below="@id/tvWriteContent"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:hint="Type here"
-        android:inputType="text"
+
+        android:inputType="none"
         android:maxLines="1" />
 
+    <ImageView
+        android:id="@+id/card"
+        android:layout_below="@id/tvWriteContent"
+        android:background="@drawable/group_1997card_"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        />
     <Button
         android:id="@+id/payNowButton"
-        android:layout_below="@id/etWriteContent"
-        android:layout_width="match_parent"
+        android:layout_below="@id/card"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Pay Now" />
+        android:layout_marginBottom="30dp"
+        android:text="Pay Now"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/tvReadContent"
         android:layout_below="@id/payNowButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Read Content:"
+        android:text=""
         android:textSize="16sp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logogreen"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

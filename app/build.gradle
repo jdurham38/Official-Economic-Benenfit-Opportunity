@@ -38,21 +38,25 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
+
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation fileTree(dir: '/Users/joshdurham/Downloads/sqljdbc_12.2 3/enu', include: ['*.aar', '*.jar'], exclude: [])
+
 
     testImplementation 'junit:junit:4.13.2'
     // parsing BER-TLV encoded data, e.g. a credit card
     // source: https://github.com/evsinev/ber-tlv
     implementation 'com.payneteasy:ber-tlv:1.0-11'
+
 
     // pretty printing of card's responses
     // source: https://github.com/devnied/EMV-NFC-Paycard-Enrollment

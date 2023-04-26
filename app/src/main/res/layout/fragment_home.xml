@@ -3,30 +3,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/vectorhomeback">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_description"
-        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/payNowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pay_now" />
+    <ImageView
+        android:layout_width="196dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="25dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/dwlogowh" />
 
-    <Button
-        android:id="@+id/transactionHistoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/transaction_history" />
 
-    <Button
-        android:id="@+id/addCardButton"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="282dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="45dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vectorvlwh" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_card" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/payNowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pay_now"
+            android:background="@drawable/button_shape1"
+            android:layout_marginBottom="36dp"/>
+
+        <Button
+            android:id="@+id/transactionHistoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transaction_history"
+            android:background="@drawable/button_shape2"
+            android:layout_marginBottom="36dp"/>
+
+        <Button
+            android:id="@+id/addCardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_card"
+            android:background="@drawable/button_shape1"
+            android:layout_marginBottom="150dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -17,6 +17,11 @@ There are 3 main functionalities:
 
 
 
+![A screenshot of my application](https://github.com/your-username/your-repo/images/image.png)
+
+
+
+
 
 
 

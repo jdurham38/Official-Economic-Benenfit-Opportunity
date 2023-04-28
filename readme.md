@@ -17,7 +17,7 @@ There are 3 main functionalities:
 
 
 
-![A screenshot of my application](https://github.com/your-username/your-repo/images/image.png)
+![A screenshot of my application](https://github.com/jdurham38/Official-Economic-Benenfit-Opportunity/blob/main/EBO-Project-Images/Application:Info%20copy.png)
 
 
 

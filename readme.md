@@ -19,6 +19,10 @@ There are 3 main functionalities:
 
 ![A screenshot of my application](https://github.com/jdurham38/Official-Economic-Benenfit-Opportunity/blob/main/EBO-Project-Images/Application:Info%20copy.png)
 
+![A Poster View of the Application](https://github.com/jdurham38/Official-Economic-Benenfit-Opportunity/blob/main/EBO-Project-Images/GroupPoster2.jpg)
+
+![My Group and I](https://github.com/jdurham38/Official-Economic-Benenfit-Opportunity/blob/main/EBO-Project-Images/GroupPoster1.jpg)
+
 
 
 
